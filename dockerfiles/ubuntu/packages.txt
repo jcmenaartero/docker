@@ -1,0 +1,17 @@
+# Listado de utilidades para Ubuntu
+#
+apt-utils
+wget
+curl
+git
+nano
+tree
+net-tools
+iputils-ping
+sudo
+openssh-server
+openssh-client
+unzip
+dos2unix
+expect
+python3

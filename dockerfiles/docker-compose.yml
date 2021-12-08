@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  sgbd:
+    container_name: mysql_db
+    image: jucamear/ubu-mysql:latest
+    build:
+      context: /home/juan/dockerfiles/ubuntu/mysql
+      args:
+        - USUARIO=juan
+        - PASSWD=1234
+    networks: 
+      netansible:
+          ipv4_address: 172.130.10.5
+networks: 
+  netansible:
+      ipam: 
+          driver: default
+          config: 
+              - subnet: 172.130.10.0/24
+    
