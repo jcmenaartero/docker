@@ -19,6 +19,7 @@ echo "CREATE USER '${USUARIO}'@'%' IDENTIFIED BY '${PASSWD}';" > /root/user.sql
 echo "GRANT ALL PRIVILEGES ON *.* TO '${USUARIO}'@'%' WITH GRANT OPTION;" >> /root/user.sql
 echo "FLUSH PRIVILEGES;" >> /root/user.sql
 mysql -u root -p"usuario" < /root/user.sql
-#mysql -u root < /root/${PROYECTO}.sql
+echo "CREATE DATABASE /*!32312 IF NOT EXISTS*/ ${PROYECTO} /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;" >> /root/${PROYECTO}.sql
+mysql -u ${USUARIO} -p${PASSWD} < /root/${PROYECTO}.sql
 
 tail -f /dev/null

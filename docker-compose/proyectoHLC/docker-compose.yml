@@ -6,6 +6,7 @@ services:
     environment:
       - USUARIO=juan
       - PASSWD=1234
+      - PROYECTO=comics
     networks: 
       mired:
   adminer:
@@ -14,6 +15,18 @@ services:
     restart: always
     ports:
       - 8080:8080
+    networks: 
+      mired:
+  api:
+    container_name: apirest
+    image: jucamear/ubu-laravel:latest
+    environment:
+      - USUARIO=juan
+      - PASSWD=1234
+      - PROYECTO=comics
+      - URL=192.168.42.29
+    ports:
+      - 8081:80
     networks: 
       mired:
 networks: 

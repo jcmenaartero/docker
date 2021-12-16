@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api:
+    container_name: apirest
+    image: jucamear/ubu-laravel:latest
+    environment:
+      - USUARIO=juan
+      - PASSWD=1234
+      - PROYECTO=comics
+      - URL=192.168.42.29
+    ports:
+      - 8081:80
+    networks: 
+      mired:
+networks: 
+  mired:
+      driver: bridge
+    

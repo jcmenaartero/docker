@@ -1,4 +1,5 @@
 FROM jucamear/ubu-base:latest
+ARG PROYECTO
 COPY ./start-mysql.sh /root
 COPY ./mysql.exp /root
 RUN chmod 755 /root/mysql.exp
