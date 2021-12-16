@@ -1,23 +1,22 @@
 version: '3.8'
 services:
-  sgbd:
+  db:
     container_name: mysql_db
     image: jucamear/ubu-mysql:latest
     environment:
       - USUARIO=juan
       - PASSWD=1234
-#    build:
-#      context: /home/juan/dockerfiles/ubuntu/mysql
-#      args:
-#        - USUARIO=juan
-#        - PASSWD=1234
     networks: 
-      netansible:
-          ipv4_address: 172.130.10.5
+      mired:
+  adminer:
+    container_name: adminer_container
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks: 
+      mired:
 networks: 
-  netansible:
-      ipam: 
-          driver: default
-          config: 
-              - subnet: 172.130.10.0/24
+  mired:
+      driver: bridge
     
