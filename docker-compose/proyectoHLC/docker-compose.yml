@@ -24,7 +24,7 @@ services:
       - USUARIO=juan
       - PASSWD=1234
       - PROYECTO=comics
-      - URL=192.168.42.29
+      - URL=95.111.227.242
     ports:
       - 8081:80
     networks: 

@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  pc1:
+    container_name: uno_equipo
+    image: jucamear/ubu-base:latest
+    environment:
+      - USUARIO=jcmena
+      - PASSWD=1234
+    networks: 
+      red_ansible:
+  pc2:
+    container_name: dos_equipo
+    image: jucamear/ubu-base:latest
+    environment:
+      - USUARIO=jcmena
+      - PASSWD=1234
+    networks: 
+      red_ansible:
+networks: 
+  red_ansible:
+      driver: bridge
